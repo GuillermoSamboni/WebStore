@@ -2,6 +2,8 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { AuthService } from './auth.service';
 import { loginAuthDto } from './dto/login-auth-dto';
 import { registerAuthDto } from './dto/register-auth.dto';
+import { structureResponse } from 'src/utils/response/structureResponse';
+import { dataUsersResponseDto } from 'src/users/response/dataUserResponseDto';
 
 @Controller('auth')
 export class AuthController {
@@ -13,7 +15,7 @@ export class AuthController {
   }
 
   @Post('/login')
-  loginUser(@Body() userLogin: loginAuthDto) {
-    return this.authService.Login(userLogin)
+  async loginUser(@Body() userLogin: loginAuthDto):Promise<structureResponse<dataUsersResponseDto>> {
+    return await this.authService.Login(userLogin)
   }
 }

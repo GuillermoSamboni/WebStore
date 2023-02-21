@@ -6,6 +6,9 @@ import { Model } from 'mongoose';
 import { Users, UsersDocument } from 'src/users/schema/users.schema';
 import { hash, compare } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
+import { structureResponse } from 'src/utils/response/structureResponse';
+import { dataUsersResponseDto } from 'src/users/response/dataUserResponseDto';
+import { responseGlobal } from 'src/utils/response/responseGlobal';
 
 
 @Injectable()
@@ -20,7 +23,7 @@ export class AuthService {
     return this.authModel.create(registerAuthDto)
   }
 
-  async Login(userLogin: loginAuthDto) {
+  async Login(userLogin: loginAuthDto): Promise<structureResponse<dataUsersResponseDto>> {
     const { email, password } = userLogin
     const findUser = await this.authModel.findOne({ email })
     if (!findUser) throw new HttpException("User no exist", 404)
@@ -31,14 +34,21 @@ export class AuthService {
       id: findUser.id,
       name: findUser.name
     }
-    
+
     const token = await this.jwtService.sign(payload)
+
     const data = {
       user: findUser,
       token: token
     }
 
+    const responseOne = new structureResponse<dataUsersResponseDto>()
+    responseOne.code = responseGlobal.codeSucces;
+    responseOne.message = responseGlobal.messageSucces;
+    responseOne.count = 1;
+    responseOne.data = findUser
+    const response = { ...responseOne, token: token }    
 
-    return data;
+    return response;
   }
 }

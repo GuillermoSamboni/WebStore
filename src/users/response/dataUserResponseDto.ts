@@ -8,6 +8,6 @@ export class dataUsersResponseDto {
     user: string;
     password: string;
     codeVerification: string;
-    sexualGender: string; 
-    isActive: boolean;
+    sexualGender: string;
+    isActive: boolean;    
 }
