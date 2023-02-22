@@ -3,7 +3,7 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { structureResponse } from 'src/structureResponse';
+import { structureResponse } from '../structureResponse';
 import { dataUsersResponseDto } from './response/dataUserResponseDto';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
