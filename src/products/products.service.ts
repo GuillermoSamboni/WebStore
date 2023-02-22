@@ -6,7 +6,7 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { dataProductResponseDto } from './dto/response/dataProductResponseDto';
 import { responseGlobal } from '../responseGlobal';
-import { structureResponse } from 'src/structureResponse';
+import { structureResponse } from '../structureResponse';
 
 
 @Injectable()

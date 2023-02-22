@@ -6,7 +6,7 @@ import { Model } from 'mongoose';
 import { Users, UsersDocument } from 'src/users/schema/users.schema';
 import { hash, compare } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { structureResponse } from 'src/structureResponse';
+import { structureResponse } from '../structureResponse';
 import { dataUsersResponseDto } from 'src/users/response/dataUserResponseDto';
 import { responseGlobal } from 'src/responseGlobal';
 
