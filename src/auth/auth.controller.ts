@@ -3,7 +3,7 @@ import { AuthService } from './auth.service';
 import { loginAuthDto } from './dto/login-auth-dto';
 import { registerAuthDto } from './dto/register-auth.dto';
 import { structureResponse } from '../structureResponse';
-import { dataUsersResponseDto } from 'src/users/response/dataUserResponseDto';
+import { dataUsersResponseDto } from '../users/response/dataUserResponseDto';
 
 @Controller('auth')
 export class AuthController {

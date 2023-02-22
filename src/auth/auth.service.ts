@@ -3,12 +3,12 @@ import { loginAuthDto } from './dto/login-auth-dto';
 import { registerAuthDto } from './dto/register-auth.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Users, UsersDocument } from 'src/users/schema/users.schema';
+import { Users, UsersDocument } from '../users/schema/users.schema';
 import { hash, compare } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { structureResponse } from '../structureResponse';
-import { dataUsersResponseDto } from 'src/users/response/dataUserResponseDto';
-import { responseGlobal } from 'src/responseGlobal';
+import { dataUsersResponseDto } from '../users/response/dataUserResponseDto';
+import { responseGlobal } from '../responseGlobal';
 
 
 @Injectable()
