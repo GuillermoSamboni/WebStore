@@ -5,8 +5,8 @@ import { Products, ProductsDocument } from '../products/schema/products.schema'
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { dataProductResponseDto } from './dto/response/dataProductResponseDto';
-import { responseGlobal } from '../utils/response/responseGlobal';
-import { structureResponse } from 'src/utils/response/structureResponse';
+import { responseGlobal } from '../responseGlobal';
+import { structureResponse } from 'src/structureResponse';
 
 
 @Injectable()

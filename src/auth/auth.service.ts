@@ -6,9 +6,9 @@ import { Model } from 'mongoose';
 import { Users, UsersDocument } from 'src/users/schema/users.schema';
 import { hash, compare } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { structureResponse } from 'src/utils/response/structureResponse';
+import { structureResponse } from 'src/structureResponse';
 import { dataUsersResponseDto } from 'src/users/response/dataUserResponseDto';
-import { responseGlobal } from 'src/utils/response/responseGlobal';
+import { responseGlobal } from 'src/responseGlobal';
 
 
 @Injectable()
@@ -21,6 +21,7 @@ export class AuthService {
     const plainToHash = await hash(password, 10)
     registerAuthDto = { ...registerAuthDto, password: plainToHash }
     return this.authModel.create(registerAuthDto)
+    
   }
 
   async Login(userLogin: loginAuthDto): Promise<structureResponse<dataUsersResponseDto>> {

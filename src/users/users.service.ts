@@ -4,9 +4,9 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Users, UsersDocument } from './schema/users.schema';
 import { Model } from 'mongoose';
-import { structureResponse } from 'src/utils/response/structureResponse';
+import { structureResponse } from 'src/structureResponse';
 import { dataUsersResponseDto } from './response/dataUserResponseDto';
-import { responseGlobal } from 'src/utils/response/responseGlobal';
+import { responseGlobal } from 'src/responseGlobal';
 
 export class UsersService {
   constructor(@InjectModel(Users.name) private usersModeule: Model<UsersDocument>) {}

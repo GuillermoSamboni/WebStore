@@ -4,7 +4,7 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { dataProductResponseDto } from './dto/response/dataProductResponseDto';
-import { structureResponse } from 'src/utils/response/structureResponse';
+import { structureResponse } from 'src/structureResponse';
 // import { productsResponseDto } from './dto/response/productsResponseDto';
 
 @ApiTags('products')
