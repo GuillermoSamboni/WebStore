@@ -3,10 +3,7 @@
     "builds": [
         {
             "src": "src/main.ts",
-            "use": "@vercel/node",
-            "config": {
-                "maxDuration": 360
-              }
+            "use": "@vercel/node"
         }
     ],
     "routes": [
@@ -17,8 +14,14 @@
                 "GET",
                 "POST",
                 "PUT",
-                "DELETE"                
+                "DELETE"
             ]
         }
-    ]
+    ],
+    "functions": {
+        "api": {
+            "maxDuration": 300,
+            "memory": 256
+        }
+    }
 }
