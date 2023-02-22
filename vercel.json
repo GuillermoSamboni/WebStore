@@ -20,7 +20,7 @@
     ],
     "functions": {
         "api": {
-            "maxDuration": 300,
+            "maxDuration": 400,
             "memory": 256
         }
     }
