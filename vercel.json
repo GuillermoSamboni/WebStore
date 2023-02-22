@@ -17,11 +17,5 @@
                 "DELETE"
             ]
         }
-    ],
-    "functions": {
-        "api": {
-            "maxDuration": 400,
-            "memory": 256
-        }
-    }
+    ]
 }
