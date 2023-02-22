@@ -9,7 +9,7 @@ import { dataUsersResponseDto } from 'src/users/response/dataUserResponseDto';
 export class AuthController {
   constructor(private readonly authService: AuthService) { }
 
-  @Post('/register')
+  @Post('/registerr')
   registerUser(@Body() registerUser: registerAuthDto) {
     return this.authService.register(registerUser)
   }
